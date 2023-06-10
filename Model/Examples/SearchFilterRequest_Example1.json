@@ -1,0 +1,40 @@
+﻿{
+    "FilterRequest": [
+        {
+            "Comment": "LastUpdated within 1 minute of 12-12-12 05:23:38 PM",
+            "PropertyName": "LastUpdated",
+            "Value": "12-12-12 05:23:38 PM",
+            "FilterType": "DateTime",
+            "OperationType": "Within",
+            "Range": "1", //minutes
+            "Result": "LastUpdated >= 12-12-12 05:22:38 PM and LastUpdated < 12-12-12 05:24:38 PM"
+        },
+        {
+            "Comment": "Price within 5 of 20.00",
+            "PropertyName": "Price",
+            "Value": "20.00", //also interpreted as an offset
+            "FilterType": "Float", //defaults to Float
+            "Operation": "Within",
+            "Range": "5",
+            "Result": "Price >= (20.00-5) and Price < (20.00+5)"
+        },
+        {
+            "Comment": "Age greater than or equal 18 and less than 50",
+            "PropertyName": "Age",
+            "Value":  null, //split range values on -
+            "FilterType": "Integer",
+            "Operation": "Within",
+            "Range":  "18-50",
+            "Result": "Age >= 18 and Age < 50"
+        },
+        {
+            "Comment": "Name greater than 'S' and less than 'Tr'",
+            "PropertyName": "Name",
+            "Value":  null,
+            "FilterType": "String",
+            "Operation": "Within",
+            "Range":  "S-Tr", //ordinal comparison
+            "Result": "Name >= 'S' and Name < 'Tr'"
+        }
+    ]
+}
